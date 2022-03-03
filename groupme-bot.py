@@ -182,7 +182,7 @@ def run(data, bot_info, send):
 def send_messages(msg):
     url = 'https://api.groupme.com/v3/bots/post?token=rboKlUMPbEaNGcGaXp2hT3J5bJv3lshsaRozEsqJ'
     data = {
-        'bot_id': "48f08c2020f533e3ca1a77a0c3",
+        'bot_id': "ea3e75d2696a227b03ea8d8afd",
         'text': msg,
     }
     print(data)

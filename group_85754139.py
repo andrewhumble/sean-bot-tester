@@ -2,8 +2,8 @@ import groupy
 
 
 def run(data, bot_info, send_message):
-    print("Hello")
-    message = data
+    message = data['sender_id']
+    print("This is the sender id {}".format(message))
     # Write message to file
     with open('messages.txt', 'a') as f:
         f.write(message + '\n\n')

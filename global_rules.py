@@ -20,7 +20,7 @@ def run(data, bot_info, send):
     with open('messages.txt', 'a') as f:
         f.write(message + '\n\n')
     if data['sender_id'] == '46530928':
-        print("Yep")
+        print(bot_info[0])
         send("Goodbye, William!")
         return True
 

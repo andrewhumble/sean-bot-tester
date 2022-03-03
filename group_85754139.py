@@ -2,7 +2,7 @@ import groupy
 
 
 def run(data, bot_info, send_message):
-    print(data)
+    print("Hello")
     message = data
     # Write message to file
     with open('messages.txt', 'a') as f:

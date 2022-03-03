@@ -170,12 +170,12 @@ def run(data, bot_info, send):
         f.write(message + '\n\n')
     if data['sender_id'] == '19448517':
         print("Checkpoint")
-        send_messages("Goodbye, Bill!", bot_info[0])
+        send_messages("Goodbye, Bill!")
         return True
     return True
 
 
-def send_messages(msg, bot_info):
+def send_messages(msg):
     url = 'https://api.groupme.com/v3/bots/post?token=rboKlUMPbEaNGcGaXp2hT3J5bJv3lshsaRozEsqJ'
     data = {
         'bot_id': "ea3e75d2696a227b03ea8d8afd",

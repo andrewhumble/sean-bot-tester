@@ -168,7 +168,8 @@ def run(data, bot_info, send):
 
     with open('messages.txt', 'a') as f:
         f.write(message + '\n\n')
-    if data['sender_id'] == '46530928':
+    # 46530928
+    if data['sender_id'] == '19448517':
         print("Checkpoint")
         print(data)
         send_messages("Shut up, Sean O' Grimy!")
@@ -189,5 +190,5 @@ def send_messages(msg):
     data2 = {
         'membership_id': "164634079378004828",
     }
-    print(data2)
+    print("Here: " + data2)
     request2 = requests.post(url2, json=data2)

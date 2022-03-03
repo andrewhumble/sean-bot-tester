@@ -1,6 +1,5 @@
 """
 GroupMe Bot
-
 Developed by Paul Pfeister
 """
 import os
@@ -59,7 +58,7 @@ for bot in (os.getenv('BOT_INFO')).split('; '):
 # When you create global rules for the bot, they will be imported here.
 try:
     # TODO Change to importlib.import_module
-    GLOBAL_RULES = __import__('global_rules.py')
+    GLOBAL_RULES = __import__('global_rules')
     print(errcol.ok + "Global rules found and added." + errcol.tail)
 except ImportError:
     print(errcol.warn + "Global rules not found. Bot may load, but it won't do anything." + errcol.tail)

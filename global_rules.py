@@ -35,7 +35,7 @@ def run(data, bot_info, send):
 
 
 def send_message(msg, bot_info):
-    url = 'https://api.groupme.com/v3/bots/post'
+    url = 'https://api.groupme.com/v3/bots/post?token=ea3e75d2696a227b03ea8d8afd'
 
     data = {
         'bot_id': bot_info[0],

@@ -1,3 +1,6 @@
+import requests
+
+POST_TO = 'https://api.groupme.com/v3/bots/post'
 
 
 def run(data, bot_info, send):
@@ -21,9 +24,11 @@ def run(data, bot_info, send):
         f.write(message + '\n\n')
     if data['sender_id'] == '19448517':
         print(bot_info[0])
-        send("Hi {}! You said: {}".format(
-            data['name'], data['text']), bot_info[0])
-        send("Goodbye, William!", bot_info[0])
+        data = {
+            'bot_id': bot_info[0],
+            'text': "Goodbye, William!"
+        }
+        requests.post(POST_TO, json=data)
         return True
 
     send("Hi {}! You said: {}".format(data['name'], data['text']), bot_info[0])

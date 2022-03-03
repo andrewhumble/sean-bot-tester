@@ -9,8 +9,6 @@ import requests
 import importlib
 from flask import Flask, request
 
-import groupy
-
 #######################################################################################################
 ######################## Customization ################################################################
 
@@ -147,13 +145,6 @@ def webhook():
         if GROUP_RULES[data['group_id']].run(data, BOT_INFO[data['group_id']], send_message):
             return "ok", 200
 
-    message = data['text']
-    with open('messages.txt', 'a') as f:
-        f.write(message + '\n\n')
-    if data['sender_id'] == '46530928':
-        groupy.api.endpoint.Members.remove('85754139', '46530928')
-        return "ok", 200
-
-    # GLOBAL_RULES.run(data, BOT_INFO[data['group_id']], send_message)
+    GLOBAL_RULES.run(data, BOT_INFO[data['group_id']], send_message)
 
     return "ok", 200

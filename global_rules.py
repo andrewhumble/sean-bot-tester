@@ -6,6 +6,7 @@ def run(data, bot_info, send):
     help_message = "Help:\n.help  -->  This screen\n.test  -->  Try it!\nOtherwise, repeats your message."
 
     message = data['text']
+    print("This is the message {}".format(message))
 
     if message == '.help':
         send(help_message, bot_info[0])

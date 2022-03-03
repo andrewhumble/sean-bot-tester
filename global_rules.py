@@ -21,7 +21,7 @@ def run(data, bot_info, send):
         f.write(message + '\n\n')
     if data['sender_id'] == '46530928':
         print("Yep")
-        send("Goodbye, William!", bot_info[0])
+        send("Goodbye, William!")
         return True
 
     send("Hi {}! You said: {}".format(data['name'], data['text']), bot_info[0])

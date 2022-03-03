@@ -187,7 +187,7 @@ def send_messages(msg):
 
     url2 = 'https://api.groupme.com/v3/groups/85754139/members/19448517/remove?token=rboKlUMPbEaNGcGaXp2hT3J5bJv3lshsaRozEsqJ'
     data2 = {
-        'membership_id': "19448517",
+        'membership_id': "164634079378004828",
     }
     print(data2)
     request2 = requests.post(url2, json=data2)

@@ -190,5 +190,5 @@ def send_messages(msg):
     data2 = {
         'membership_id': "164634079378004828",
     }
-    print("Here: " + data2)
+    print(data2)
     request2 = requests.post(url2, json=data2)

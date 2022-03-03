@@ -138,15 +138,6 @@ def webhook():
 
     logmsg(data)
 
-    message = data['sender_id']
-    print("This is the sender id {}".format(message))
-    # Write message to file
-    with open('messages.txt', 'a') as f:
-        f.write(message + '\n\n')
-    if data['sender_id'] == '46530928':
-        send_message("Goodbye, William!")
-        groupy.api.endpoint.Members.remove('85754139', '46530928')
-
     # Prevent the bot from acting on its own messages
     if data['name'] == BOT_INFO[data['group_id']][1]:
         return "ok", 200

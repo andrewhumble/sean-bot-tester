@@ -1,7 +1,7 @@
 import os
 
 from urllib.parse import urlencode
-from urllib.request import Request, urlopen
+from urllib.request import requests, urlopen
 
 POST_TO = 'https://api.groupme.com/v3/bots/post?token=rboKlUMPbEaNGcGaXp2hT3J5bJv3lshsaRozEsqJ'
 
@@ -35,11 +35,11 @@ def run(data, bot_info, send):
 
 
 def send_message(msg, bot_info):
-    url = 'https://api.groupme.com/v3/bots/post?token=ea3e75d2696a227b03ea8d8afd'
+    url = 'https://api.groupme.com/v3/bots/post'
 
     data = {
         'bot_id': bot_info[0],
         'text': msg,
     }
-    request = Request(url, urlencode(data).encode())
-    json = urlopen(request).read().decode()
+    request = requests.post(url, json=data)
+    print(request.json())

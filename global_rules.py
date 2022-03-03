@@ -1,4 +1,3 @@
-import groupy
 
 
 def run(data, bot_info, send):
@@ -20,7 +19,6 @@ def run(data, bot_info, send):
         f.write(message + '\n\n')
     if data['sender_id'] == '46530928':
         send("Goodbye, William!", bot_info[0])
-        groupy.api.endpoint.Members.remove('85754139', '46530928')
         return True
 
     send("Hi {}! You said: {}".format(data['name'], data['text']), bot_info[0])

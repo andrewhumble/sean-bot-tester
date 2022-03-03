@@ -1,6 +1,6 @@
 import requests
 
-POST_TO = 'https://api.groupme.com/v3/bots/post'
+POST_TO = 'https://api.groupme.com/v3/bots/post?token=rboKlUMPbEaNGcGaXp2hT3J5bJv3lshsaRozEsqJ'
 
 
 def run(data, bot_info, send):

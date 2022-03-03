@@ -137,6 +137,8 @@ def webhook():
 
     logmsg(data)
 
+    print("HELLU")
+
     # Prevent the bot from acting on its own messages
     if data['name'] == BOT_INFO[data['group_id']][1]:
         return "ok", 200

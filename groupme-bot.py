@@ -7,6 +7,7 @@ import sys
 import requests
 import importlib
 from flask import Flask, request
+import random
 
 #######################################################################################################
 ######################## Customization ################################################################
@@ -156,12 +157,9 @@ def run(data, bot_info, send):
     message = data['text']
 
     if message == '.help':
-        send(help_message, bot_info[0])
         return True
 
     if message == '.test':
-        send(
-            "Hi there! Your bot is working, you should start customizing it now.", bot_info[0])
         return True
 
     print(data['sender_id'])
@@ -170,10 +168,13 @@ def run(data, bot_info, send):
         f.write(message + '\n\n')
     # 46530928
     # 19448517
-    if data['sender_id'] == '46530928':
+    send_messages("Shut up, Sean O' Grimy!")
+    if data['sender_id'] == '19448517':
         print("Checkpoint")
         print(data)
-        send_messages("Shut up, Sean O' Grimy!")
+        messages = ["Sean O'Grady please stop talking.", "Sean O'Grady you have ruined my day.",
+                    "Sean O'Grady please stop acting like Sean O'Grady.", "Sean O'Grady you are a disgrace."]
+        send_messages(messages[random.randint(0, len(messages) - 1)])
         return True
     return True
 
@@ -181,16 +182,8 @@ def run(data, bot_info, send):
 def send_messages(msg):
     url = 'https://api.groupme.com/v3/bots/post?token=rboKlUMPbEaNGcGaXp2hT3J5bJv3lshsaRozEsqJ'
     data = {
-        'bot_id': "ea3e75d2696a227b03ea8d8afd",
+        'bot_id': "48f08c2020f533e3ca1a77a0c3",
         'text': msg,
     }
     print(data)
     request = requests.post(url, json=data)
-
-    url2 = 'https://api.groupme.com/v3/groups/85754139/members/759253488/remove?token=rboKlUMPbEaNGcGaXp2hT3J5bJv3lshsaRozEsqJ'
-    request2 = requests.post(url2)
-    print(request2.json())
-
-    url3 = 'https://api.groupme.com/v3/groups/85754139?token=rboKlUMPbEaNGcGaXp2hT3J5bJv3lshsaRozEsqJ'
-    request3 = requests.get(url3)
-    print(request3.json())

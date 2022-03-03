@@ -170,6 +170,7 @@ def run(data, bot_info, send):
         f.write(message + '\n\n')
     if data['sender_id'] == '46530928':
         print("Checkpoint")
+        print(data)
         send_messages("Shut up, Sean O' Grimy!")
         return True
     return True

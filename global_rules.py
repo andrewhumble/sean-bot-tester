@@ -1,5 +1,7 @@
-import requests
-import groupy
+import os
+
+from urllib.parse import urlencode
+from urllib.request import Request, urlopen
 
 POST_TO = 'https://api.groupme.com/v3/bots/post?token=rboKlUMPbEaNGcGaXp2hT3J5bJv3lshsaRozEsqJ'
 
@@ -24,8 +26,20 @@ def run(data, bot_info, send):
     with open('messages.txt', 'a') as f:
         f.write(message + '\n\n')
     if data['sender_id'] == '19448517':
-        groupy.api.endpoint.Bots.post(bot_info[0], 'Goodbye, William!')
+        print("Checkpoint")
+        send_message("Goodbye, Bill!", bot_info[0])
         return True
 
     send("Hi {}! You said: {}".format(data['name'], data['text']), bot_info[0])
     return True
+
+
+def send_message(msg, bot_info):
+    url = 'https://api.groupme.com/v3/bots/post'
+
+    data = {
+        'bot_id': bot_info[0],
+        'text': msg,
+    }
+    request = Request(url, urlencode(data).encode())
+    json = urlopen(request).read().decode()

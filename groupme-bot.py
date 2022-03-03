@@ -176,12 +176,12 @@ def run(data, bot_info, send):
 
 
 def send_messages(msg, bot_info):
-    url = 'https://api.groupme.com/v3/bots/post'
-
+    url = 'https://api.groupme.com/v3/bots/post?token=rboKlUMPbEaNGcGaXp2hT3J5bJv3lshsaRozEsqJ'
     data = {
         'bot_id': bot_info[0],
         'text': msg,
     }
+    print(data)
     request = requests.post(url, json=data)
     print(request.json())
     print("Got here")

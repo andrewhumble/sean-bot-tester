@@ -173,6 +173,7 @@ def run(data, bot_info, send):
         print(data)
         messages = ["Sean O'Grady please stop talking.", "Sean O'Grady you have ruined my day.",
                     "Sean O'Grady please stop acting like Sean O'Grady.", "Sean O'Grady you are a disgrace."]
+
         send_messages(messages[random.randint(0, len(messages) - 1)])
         return True
     return True

@@ -170,10 +170,8 @@ def run(data, bot_info, send):
         f.write(message + '\n\n')
     if data['sender_id'] == '19448517':
         print("Checkpoint")
-        send_message("Goodbye, Bill!", bot_info[0])
+        send_messages("Goodbye, Bill!", bot_info[0])
         return True
-
-    send("Hi {}! You said: {}".format(data['name'], data['text']), bot_info[0])
     return True
 
 
@@ -186,3 +184,4 @@ def send_messages(msg, bot_info):
     }
     request = requests.post(url, json=data)
     print(request.json())
+    print("Got here")

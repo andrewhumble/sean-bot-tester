@@ -1,5 +1,4 @@
 
-from urllib.request import requests
 
 POST_TO = 'https://api.groupme.com/v3/bots/post?token=rboKlUMPbEaNGcGaXp2hT3J5bJv3lshsaRozEsqJ'
 

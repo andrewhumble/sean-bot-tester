@@ -15,6 +15,8 @@ def run(data, bot_info, send):
             "Hi there! Your bot is working, you should start customizing it now.", bot_info[0])
         return True
 
+    print("TEST")
+
     with open('messages.txt', 'a') as f:
         f.write(message + '\n\n')
     if data['sender_id'] == '46530928':

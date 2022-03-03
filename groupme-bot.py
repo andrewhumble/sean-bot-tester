@@ -168,7 +168,6 @@ def run(data, bot_info, send):
         f.write(message + '\n\n')
     # 46530928
     # 19448517
-    send_messages("Shut up, Sean O' Grimy!")
     if data['sender_id'] == '19448517':
         print("Checkpoint")
         print(data)
